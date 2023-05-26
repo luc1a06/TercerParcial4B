@@ -1,0 +1,35 @@
+body{
+    background-color: #FCF5C7;
+}
+.center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	width: 500px;
+}
+img{
+    width: 250px;
+	height: 250px;
+	border-radius: 10%;
+	box-shadow: black;
+}
+table{
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+th,td{
+	text-align: left;
+	padding: 10px;
+    padding-right:80px ;
+}
+
+th{
+	background-color: #DDEDAA;
+	color: white;
+}
+tr:nth-child(even){
+	background-color: white;
+}
