@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="footer.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <title> Inicio </title>
+</head>
+<body style="background-color:  #cebfde ;">
+  <div style="margin: 24px;">
+    <nav class="navbar navbar-light" style="background-color: #BFDECE;">
+      <div class="center">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="formulario.html">Formulario</a>
+          </li>
+          <li>
+            <a href="resultado.html">Resultado</a>
+          </li>
+          <li>
+            <a href="apimovies.html">Buscador de peliculas</a>
+          </li>
+          <li>
+            <a href="calculadora.html">Calculadora</a>
+          </li>
+          <li>
+            <a href="fisica.html">Fisica</a>
+          </li>
+          <li>
+            <a href="cuestionario.html">Cuestionario</a>
+          </li>
+          <li>
+            <a href="perfil.html">Perfil</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <texto1>Pedido realizado con exito!</texto1><br>
+
+    <ul>
+      <p><strong><x>Nombre: </x></strong><span id="nombre"></span></p>
+      <p><strong><x>Apellido:</x> </strong><span id="apellido"></span></p>
+      <p><strong><x>Telefono:</x> </strong><span id="telefono"></span></p>
+      <p><strong><x>Direccion:</x> </strong><span id="direccion"></span></p>
+      <p><strong><x>Colonia:</x> </strong><span id="colonia"></span></p>
+      <p><strong><x>Servilletas:</x> </strong><span id="servilletas"></span></p>
+      <p><strong><x>Menu:</x> </strong><span id="menu"></span></p>
+      <p><strong><x>Tomate:</x> </strong><span id="tomate"></span></p>
+      <p><strong><x>Cebolla:</x> </strong><span id="cebolla"></span></p>
+      <p><strong><x>Pepinillos:</x> </strong><span id="pepinillos"></span></p>
+      <p><strong><x>Pina: </x></strong><span id="pina"></span></p>
+
+      <script type="text/javascript">
+        const orden=JSON.parse(localStorage.getItem("orden"));
+          document.getElementById("nombre").textContent=orden.nombre;
+          document.getElementById("apellido").textContent=orden.apellido;
+          document.getElementById("telefono").textContent=orden.telefono;
+          document.getElementById("direccion").textContent=orden.direccion;
+          document.getElementById("colonia").textContent=orden.colonia;
+          document.getElementById("servilletas").textContent=orden.servilletas;
+          document.getElementById("menu").textContent=orden.menu;
+          document.getElementById("tomate").textContent=orden.tomate;
+          document.getElementById("cebolla").textContent=orden.cebolla;
+          document.getElementById("pepinillos").textContent=orden.pepinillos;
+          document.getElementById("pina").textContent=orden.pina;
+      </script>
+    </ul>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h2>Contactame</h2>
+        <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales</p>
+        <div class="contact-links">
+          <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="http://www.instagram.com/chaeyo.0" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="http://www.snapchat.com/miperfil" target="_blank"><i class="fab fa-snapchat"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const socialnetworks = document.querySelectorAll('.contact-links a');
+    socialnetworks.forEach(link =>{
+      link.addEventListener('click', e =>{
+        e.preventDefault();
+        window.open(link.href, '_blank');
+      });
+    });
+  </script>
+</footer>
+</body>
+</html>

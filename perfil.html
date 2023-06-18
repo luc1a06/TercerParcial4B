@@ -1,24 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE_edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="footer.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="bme.css">
-<link rel="stylesheet" type="text/css" href="footer.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-    <title> Doris M Lucas </title>
+  <title> Doris M Lucas </title>
 </head>
 <body>
-    <table class="center" style="background-color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; width: 900px; position: center;">
+<style>
+  body{
+    background-color: #DAE8CF;
+}
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  width: 500px;
+}
+img{
+    width: 250px;
+  height: 250px;
+  border-radius: 10%;
+  box-shadow: black;
+}
+table{
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th,td{
+  text-align: left;
+  padding: 10px;
+    padding-right:80px ;
+}
+
+th{
+  background-color: #DDEDAA;
+  color: white;
+}
+tr:nth-child(even){
+  background-color: white;
+}
+</style>
+  <div style="margin: 24px;">
+    <nav class="navbar navbar-light" style="background-color: #BFDECE;">
+      <div>
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="formulario.html">Formulario</a>
+          </li>
+          <li>
+            <a href="resultado.html">Resultado</a>
+          </li>
+          <li>
+            <a href="apimovies.html">Buscador de peliculas</a>
+          </li>
+          <li>
+            <a href="calculadora.html">Calculadora</a>
+          </li>
+          <li>
+            <a href="fisica.html">Fisica</a>
+          </li>
+          <li>
+            <a href="cuestionario.html">Cuestionario</a>
+          </li>
+          <li>
+            <a href="perfil.html">Perfil</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <table class="center" style="background-color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; width: 900px; position: center;">
         <tr>
             <td>
                 <img src="chuu.png" alt="Chuu" style="max-width: 200px; height: auto; position: relative; overflow: hidden; display: blocK; margin: 0 0 0 0%; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius:50%; border-radius: 50%; border: 10px DOUBLE #ffc09f;">
@@ -37,7 +101,7 @@
     <table class="center" style="background-color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; width: 900px; position: center;">
     <tr>
         <td>
-            <i class="fa fa-user" aria-hidden="true" style="color: gray;"></i> INFORMACIÓN BASICA <i class=""
+            <i class="fa fa-file" aria-hidden="true" style="color: gray;"></i> INFORMACIÓN BASICA <i class="">
         </td>
     </tr>
     <tr>
@@ -91,5 +155,31 @@
     </td>
     </tr>
     </table>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h2>Contactame</h2>
+        <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales</p>
+        <div class="contact-links">
+          <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="http://www.instagram.com/chaeyo.0" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="http://www.snapchat.com/miperfil" target="_blank"><i class="fab fa-snapchat"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const socialnetworks = document.querySelectorAll('.contact-links a');
+    socialnetworks.forEach(link =>{
+      link.addEventListener('click', e =>{
+        e.preventDefault();
+        window.open(link.href, '_blank');
+      });
+    });
+  </script>
+</footer>
 </body>
 </html>

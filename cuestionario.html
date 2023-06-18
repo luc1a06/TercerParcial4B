@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="footer.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <link href="https://fonts.cdnfonts.com/css/soul-wave" rel="stylesheet">
+
+  <title> Cuestionario </title>
+</head>
+<body>
+   <style>
+        body{
+            background-color: aliceblue;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .quiz-container{
+            outline: red 1px;
+            background-color: white ;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 2px ;
+            width: 300px;
+            overflow: hidden;
+        }
+        .quiz-header{
+            padding: 4rem;
+        }
+        h2{
+            padding: 1rem;
+            text-align: center;
+            margin: 0;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li{
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        ul li label{
+            cursor: pointer;
+        }
+        button{
+            background-color: blue;
+            color: whitesmoke;
+            border: none;
+            display: block ;
+            width: 100%;
+            cursor:pointer ;
+            font-size: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 15px;
+        }
+        button:hover{
+            background-color: aquamarine;
+        }
+        button:focus{
+            outline:none ;
+            background-color: blanchedalmond;
+        }
+      </style>
+
+  <div style="margin: 24px;">
+    <nav class="navbar navbar-light" style="background-color: #BFDECE;">
+      <div class="center">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="formulario.html">Formulario</a>
+          </li>
+          <li>
+            <a href="resultado.html">Resultado</a>
+          </li>
+          <li>
+            <a href="apimovies.html">Buscador de peliculas</a>
+          </li>
+          <li>
+            <a href="calculadora.html">Calculadora</a>
+          </li>
+          <li>
+            <a href="fisica.html">Fisica</a>
+          </li>
+          <li>
+            <a href="cuestionario.html">Cuestionario</a>
+          </li>
+          <li>
+            <a href="perfil.html">Perfil</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+      <div class="container">
+        <div class="quiz-container" id="quiz">
+            <div class="quiz-header">
+                <div class="image-container">
+                    <img src="image.jpg" alt="Imagen" id="question-image" style="width: 200px; height: auto;">
+
+                <h2 id="question">Question Text</h2>
+                <ul>
+                    <li>
+                        <input type="radio" name="answer" id="a" class="answer">
+                        <label for="a" id="a_text">Question</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="b" class="answer">
+                        <label for="b" id="b_text">Question</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="c" class="answer">
+                        <label for="c" id="c_text">Question</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="d" class="answer">
+                        <label for="d" id="d_text">Question</label>
+                    </li>
+                </ul>
+            </div>
+            <button id="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+    <script>
+        const quizData = [
+            {
+                question:"Que es el impresionismo?",
+                image:"img.jpg",
+                a:"Un movimiento artistico",
+                b:"Un estilo musical",
+                c:"Una tecnica de fotografia",
+                d:"Una corriente literaria",
+                correct:"a"
+            },
+            {
+                question:"Cual fue la epoca en la que surgio el impresionismo?",
+                image:"img2.jpg",
+                a:"Siglo XVII",
+                b:"Siglo XIX",
+                c:"Siglo XX",
+                d:"Siglo XVI",
+                correct:"b"
+            },
+            {
+                question:"Cual de los siguientes artistas NO es considerado impresionista?",
+                image:"img3.jpg",
+                a:"Claude Money",
+                b:"Vicent van Gogh",
+                c:"Pierre-Auguste Renoir",
+                d:"Salvador Dali",
+                correct:"d"
+            },
+            {
+                question:"Cual es una caracteristica principal del estilo impresionista?",
+                image:"img4.jpg",
+                a:"Pinceladas sueltas y visibles",
+                b:"Figuras realistas y detalladas",
+                c:"Uso de colores oscuros y sombrios",
+                d:"Composiciones abstractas",
+                correct:"a"
+            },
+            {
+                question:"Que tipos de temas suelen representarse en las pinturas impresionistas?",
+                image:"img5.jpg",
+                a:"Paisajes naturales",
+                b:"Retratos formales",
+                c:"Escenas historicas",
+                d:"Objetos abstractos",
+                correct:"a"
+            }
+        ];
+
+        const quiz = document.getElementById('quiz');
+        const answerEls = document.querySelectorAll('.answer');
+        const questionEl = document.getElementById('question');
+        const a_text = document.getElementById('a_text');
+        const b_text = document.getElementById('b_text');
+        const c_text = document.getElementById('c_text');
+        const d_text = document.getElementById('d_text');
+        const submitBtn = document.getElementById('submit');
+
+        let currentQuiz = 0;
+        let score = 0;
+
+        loadQuiz();
+
+        function loadQuiz() {
+            deselectAnswers();
+            const currentQuizData = quizData[currentQuiz];
+            questionEl.innerText = currentQuizData.question;
+            a_text.innerText = currentQuizData.a;
+            b_text.innerText = currentQuizData.b;
+            c_text.innerText = currentQuizData.c;
+            d_text.innerText = currentQuizData.d;
+
+            const questionImage = document.getElementById("question-image");
+            questionImage.src = currentQuizData.image;
+        }
+
+        function deselectAnswers(){
+            answerEls.forEach(answerEl => answerEl.checked = false);
+        }
+
+        function getSelected(){
+            let answer;
+
+            answerEls.forEach(answerEl => {
+                if(answerEl.checked){
+                    answer = answerEl.id;
+                }
+            });
+
+            return answer;
+        }
+
+        submitBtn.addEventListener('click', () =>{
+            const answer = getSelected();
+
+            if(answer){
+                if(answer === quizData[currentQuiz].correct) {
+                    score++;
+                }
+
+                currentQuiz++;
+                if(currentQuiz < quizData.length){
+                    loadQuiz()
+                } else {
+                    quiz.innerHTML = `
+                    <h2>Contestas ${score}/${quizData.length} de preguntas correctamente</h2>
+
+                    <button onclick="location.reload()">Reload</button>
+                    `
+                }
+            }
+        })
+      </script>
+
+      <br>
+      <br>
+<footer>
+  <div class="container-quiz">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>Contactame</h2>
+        <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales</p>
+        <div class="contact-links">
+          <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="http://www.instagram.com/chaeyo.0" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="http://www.snapchat.com/miperfil" target="_blank"><i class="fab fa-snapchat"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const socialnetworks = document.querySelectorAll('.contact-links a');
+    socialnetworks.forEach(link =>{
+      link.addEventListener('click', e =>{
+        e.preventDefault();
+        window.open(link.href, '_blank');
+      });
+    });
+  </script>
+</footer>
+</body>
+</html>
